@@ -27,9 +27,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Pruebas en VERDE -> desplegando a produccion'
-        // TODO: cuando rapigo-backend exista como servicio en Dokploy,
-        // pega aqui tu webhook de deploy:
-        // sh 'curl -fsSL -X POST "PEGA_AQUI_TU_WEBHOOK_DE_DOKPLOY"'
+        sh 'curl -fsSL -X POST "https://dokploy.frogland.tech/api/deploy/gOkXntJ5yhVLTU2ncjtWg"'
       }
     }
   }
