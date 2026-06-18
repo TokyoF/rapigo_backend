@@ -22,7 +22,7 @@ public class RestaurantService {
     public List<Restaurant> list(String cuisine) {
         if (cuisine == null || cuisine.isBlank()) return restaurantRepository.findAll();
         return restaurantRepository.findAll().stream()
-                .filter(r -> r.getCuisine().equals(cuisine)) // BUG RG-207: usa equals (sensible a mayúsculas) en vez de equalsIgnoreCase
+                .filter(r -> r.getCuisine().equalsIgnoreCase(cuisine)) // BUG RG-207: usa equals (sensible a mayúsculas) en vez de equalsIgnoreCase
                 .toList();
     }
 
